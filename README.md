@@ -109,6 +109,8 @@ Options:
                  multiple paths                                               [array] [required] [default: ["./"]]
   --output, -o   Paths where you would like to save extracted strings. You can use path expansion, glob
                  patterns and multiple paths                                                    [array] [required]
+  --marker, -m   If this option is passed, use a custom marker function instead of the marker
+                 from ngx-translate-extract-marker                                                        [string]
 
 Examples:
   ngx-translate-extract -i ./src-a/ -i ./src-b/ -o strings.json             Extract (ts, html) from multiple paths
@@ -117,6 +119,7 @@ Examples:
   ngx-translate-extract -i ./src/ -o './i18n/{en,da}.json'                  Extract (ts, html) and save to da.json and en.json using brace expansion
   ngx-translate-extract -i './src/**/*.{ts,tsx,html}' -o strings.json       Extract from ts, tsx and html
   ngx-translate-extract -i './src/**/!(*.spec).{ts,html}' -o strings.json   Extract from ts, html, excluding files with ".spec"
+  ngx-translate-extract -i './src/' -o ./i18n/fr.json -m T                  Extract (ts, html) using a custom marker named `T`.
 ```
 
 ## Note for GetText users
